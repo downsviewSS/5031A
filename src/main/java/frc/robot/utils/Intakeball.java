@@ -5,12 +5,12 @@
 package frc.robot.utils;
 
 
-import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj2.command.Command;
  import frc.robot.RobotContainer;
  import frc.robot.Constants.Intakeconstants;
  import frc.robot.subsystems.Intake;
 
- public class Intakeball extends CommandBase {
+ public class Intakeball extends Command {
   /** Creates a new Intakeball. */
    Intake intake;
    public Intakeball(Intake i) {
@@ -22,13 +22,13 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
   // Called when the command is initially scheduled.
    @Override
   public void initialize() {
-    intake.intakeball(RobotContainer.shootercontroller,Intakeconstants.intakespeed);
+    //intake.intakeball(RobotContainer.shootercontroller,Intakeconstants.intakespeed);
   }
 
    // Called every time the scheduler runs while the command is scheduled.
 //   @Override
-//   public void execute() {
-//   }
+ public void execute() {intake.intakeball(RobotContainer.shootercontroller,Intakeconstants.intakespeed);
+ }
 
 //   // Called once the command ends or is interrupted.
 //   @Override

@@ -28,7 +28,9 @@ import frc.robot.subsystems.Elevator;
 // import frc.robot.subsystems.Shooter;
 import frc.robot.utils.Elevatorball;
  import frc.robot.utils.Intakeball;
-// import frc.robot.utils.Shootball;
+//import frc.robot.utils.Shooterball;
+
+
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.RunCommand;
 import edu.wpi.first.wpilibj2.command.SwerveControllerCommand;
@@ -49,8 +51,8 @@ public class RobotContainer {
   private final Elevatorball elevatorball;
    private final Intake intake;
    private final Intakeball intakeball;
-  // private final Shooter shooter;
-  // private final Shootball shootball;
+   //private final Shooterball shooterball;
+  
   // The driver's controller
   public static PS4Controller shootercontroller;
   PS4Controller m_driverController = new PS4Controller(OIConstants.kDriverControllerPort);
@@ -67,15 +69,16 @@ public class RobotContainer {
    intake = new Intake();
    intakeball = new Intakeball(intake);
    intakeball.addRequirements(intake);
+   //shooterball = new Shooterball(intake);
+   //shooterball.addRequirements(intake);
 
-  // shooter = new Shooter();
-  // shootball = new Shootball(shooter);
-  // shootball.addRequirements(shooter);
+  
 
   shootercontroller = new PS4Controller(elevatorconstants.shootercontroller); // Joystick for shooter
     
 configureBindings();
-    // configureButtonBinding();
+//configureButtonBinding();
+
     m_robotDrive.setDefaultCommand(
       // The left stick controls translation of the robot.
       // Turning is controlled by the X axis of the right stick.
@@ -97,11 +100,11 @@ configureBindings();
             m_robotDrive));
   }
   
-  // private void configureButtonBinding() {
-  //   JoystickButton shootButton = new JoystickButton(shootercontroller, PS4Controller.Button.kR1.value);
-  //   shootButton.whileTrue( new Shootball(shooter));
+   //private void configureButtonBinding() {
+     //JoystickButton shootButton = new JoystickButton(shootercontroller, PS4Controller.Button.kR1.value);
+     //shootButton.whileTrue(new Shooterball(intake));
 
-  // }
+   //}
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.
    *

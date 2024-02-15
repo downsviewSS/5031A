@@ -5,32 +5,34 @@
 package frc.robot.utils;
 
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.subsystems.Elevator;
-import frc.robot.RobotContainer;
-import frc.robot.Constants.elevatorconstants;;
-public class Elevatorball extends Command {
-  /** Creates a new Elevatorball. */
-  Elevator elevator;
-  public Elevatorball(Elevator e) {
-    elevator = e;
-    addRequirements(elevator);
+//import frc.robot.Constants.Intakeconstants;
+import frc.robot.subsystems.Intake;
+
+public class Shooterball extends Command {
+  /** Creates a new Shooterball. */
+ // Intake intake;
+  public Shooterball(Intake i) {
+   // intake = i;
+    //addRequirements(intake);
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
   // Called when the command is initially scheduled.
   @Override
-  public void initialize() {}
+  public void initialize() {
+    }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    elevator.elevatorball(RobotContainer.shootercontroller, elevatorconstants.elevatorspeed);
+    //intake.Shooter(Intakeconstants.shooterspeed);
+
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    elevator.stop();
+    //intake.Shooter(0);
   }
 
   // Returns true when the command should end.

@@ -5,11 +5,12 @@
  package frc.robot.subsystems;
 
  import com.revrobotics.CANSparkMax;
- import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+ import com.revrobotics.CANSparkLowLevel.MotorType;
 
   import edu.wpi.first.wpilibj.PS4Controller;
    import edu.wpi.first.wpilibj2.command.SubsystemBase;
-  import frc.robot.Constants.Intakeconstants;
+
+import frc.robot.Constants.Intakeconstants;
 
    public class Intake extends SubsystemBase {
     /** Creates a new Intake. */
@@ -18,12 +19,19 @@
    public Intake() {
      frontintakeCanSparkMax = new CANSparkMax(Intakeconstants.intakeCanSparkMax, MotorType.kBrushed);
      backintakeCanSparkKMax = new CANSparkMax(Intakeconstants.intake2CanSparkMax, MotorType.kBrushed);
+     backintakeCanSparkKMax.setInverted(true);
+  frontintakeCanSparkMax.setInverted(true);
   }
 
   
   public void intakeball(PS4Controller shootercontroller, double speed){
     frontintakeCanSparkMax.set(shootercontroller.getRawAxis(Intakeconstants.intaketriger)*speed);
-    backintakeCanSparkKMax.set(shootercontroller.getRawAxis(Intakeconstants.intaketriger)*speed);
+    backintakeCanSparkKMax.set(shootercontroller.getRawAxis(Intakeconstants.intaketriger2)*speed);
+  }
+
+  public void Shooter (double speed){
+frontintakeCanSparkMax.set(speed);
+    backintakeCanSparkKMax.set(speed);
   }
  public void stop (){
    frontintakeCanSparkMax.set(0);

@@ -3,7 +3,7 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot;
-import com.revrobotics.CANSparkMax.IdleMode;
+//import com.revrobotics.CANSparkBase.IdleMode;
 
 import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.math.kinematics.SwerveDriveKinematics;
@@ -103,8 +103,8 @@ public final class Constants {
     public static final double kTurningMinOutput = -1;
     public static final double kTurningMaxOutput = 1;
 
-    public static final IdleMode kDrivingMotorIdleMode = IdleMode.kBrake;
-    public static final IdleMode kTurningMotorIdleMode = IdleMode.kBrake;
+    public static final com.revrobotics.CANSparkBase.IdleMode kDrivingMotorIdleMode = com.revrobotics.CANSparkBase.IdleMode.kBrake;
+    public static final com.revrobotics.CANSparkBase.IdleMode kTurningMotorIdleMode = com.revrobotics.CANSparkBase.IdleMode.kBrake;
 
     public static final int kDrivingMotorCurrentLimit = 40; // amps changed 50 > 40 (02/07/24)
     public static final int kTurningMotorCurrentLimit = 20; // amps
@@ -145,10 +145,12 @@ public final class Constants {
 
     public static final int intakeCanSparkMax = 5; // sparkmax for intake front motor
     public static final int intaketriger = 0;  // x-axis for shooter joytsick back motor
-    public static final double intakespeed = 0.5;
+    public static final double intakespeed = 1.0;
     public static final int intake2CanSparkMax = 6;
     
-    public static final double shooter_speed = 1;
+    
+    public static final int intaketriger2 = 2;
+    public static final double shooterspeed = 0.4; // shooter speed set to a button
 
 
   }
